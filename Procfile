@@ -1,1 +1,1 @@
-web: gunicorn hermes.wgsi
+web: gunicorn hermes.wsgi
