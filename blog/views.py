@@ -6,8 +6,8 @@ from django.shortcuts import HttpResponseRedirect
 def home(request):
     articles = Article.objects.all().order_by('-created')
     context = {
-        'main': 'MediaThor Mag',
-        'title': 'MediaThor Mag',
+        'main': 'MediaThor News',
+        'title': 'MediaThor News',
         'articles': articles,
     }
     
