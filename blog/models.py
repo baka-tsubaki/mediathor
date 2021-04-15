@@ -35,4 +35,17 @@ class Article(models.Model):
         return self.title
 
 
+class Comment(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    content = models.TextField()
 
+
+class Contact(models.Model):
+    f_name = models.CharField(max_length=200, null=False, blank=False)
+    email = models.EmailField()
+    subject = models.CharField(max_length=350)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.f_name + ' ' + self.subject
