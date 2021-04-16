@@ -28,7 +28,7 @@ def post(request, slug):
 def contact(request):
     success = 'formulaire soumis correctement'
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST or None)
         if form.is_valid():
             form.save()
             return render(request, 'contact.html', {'form': form, 'success': success})
