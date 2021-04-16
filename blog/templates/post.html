@@ -31,12 +31,14 @@
 
                          <div class="blog-post-title">
                               <h2>{{article.title}}</a></h2>
+
                          </div>
 
                          <div class="blog-post-format">
                               <span><a href="#"><img src="{{article.author_pic.url}}" class="img-responsive img-circle">{{article.author}}</a></span>
                               <span><i class="fa fa-date"></i> {{article.created}}</span>
                               <span><a href="#"><i class="fa fa-comment-o"></i> 124 Comments</a></span>
+                              <span><a href="#"><i></i>{{article.categories}}</a></span>
                          </div>
 
                          <div class="blog-post-des">
@@ -50,7 +52,7 @@
                          
                          {% endfor %}
 
-
+                         {% comment %} 
                          <div class="blog-comment">
                               <h3>Comments</h3>
                                    <div class="media">
@@ -63,7 +65,7 @@
                                              <p>Aliquam gravida arcu at risus blandit, in interdum metus varius. Cras efficitur, ex sit amet tincidunt rhoncus, dui ex hendrerit risus, ac dapibus ligula mi id leo. In auctor dui justo, ac consequat dui posuere ac.</p>
                                         </div>
                                    </div>
-                              </div>
+                              </div> {% endcomment %}
 
                          <div class="blog-comment-form">
                               <h3>Leave a Comment</h3>

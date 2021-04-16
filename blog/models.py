@@ -11,11 +11,33 @@ class Author(models.Model):
         return self.name
 
 
+class Categories(models.Model):
+    ACTUALITE = 'Actualité'
+    LITTERATURE = 'Littérature'
+    CULTURE = 'Culture'
+    EVENEMENT = 'Evènement'
+    BESTSELLERS = 'Best Sellers'
 
+    BLOG_CATEGORY_CHOICES = [
+        (ACTUALITE, 'Actualité'),
+        (LITTERATURE, 'Littérature'),
+        (CULTURE, 'Culture'),
+        (EVENEMENT, 'Evènement'),
+        (BESTSELLERS, 'Best Sellers'),
+    ]
+    blog_category_choices = models.CharField(
+        max_length=20,
+        choices=BLOG_CATEGORY_CHOICES,
+        default=ACTUALITE,  
+    )
+
+    def __str__(self):
+        return self.blog_category_choices
 
 class Article(models.Model):
     title = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='title')
+    categories = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, blank=True)
     author_pic = models.ImageField(null=True, blank=True)
     created = models.DateTimeField()

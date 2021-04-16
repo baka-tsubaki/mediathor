@@ -53,7 +53,7 @@ http://www.tooplate.com/view/2085-neuron
           <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{% url 'home' %}">Acceuil</a></li>
-                    <li><a href="#">A propos</a></li>
+                    <li><a href="{% url 'about' %}">A propos</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="{% url 'contact' %}">Contacts</a></li>
                </ul>
@@ -83,23 +83,6 @@ http://www.tooplate.com/view/2085-neuron
 </section>
 
 <!-- Blog Section -->
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-     <div class="container">
-
-          
-          <div class="collapse navbar-collapse">
-               <ul class="nav navbar-nav navbar-center">
-                    <li class="active"><a href="#">Actualite</a></li>
-                    <li><a href="#">Litteruture</a></li>
-                    <li><a href="#">Evenement</a></li>
-                    <li><a href="#">Culture</a></li>
-                    <li><a href="#">Foire</a></li>
-                    <li><a href="#">Best Sellers</a></li>
-               </ul>
-          </div>
-
-  </div>
-</div>
 
 <section id="blog">
      <div class="container">
@@ -120,6 +103,7 @@ http://www.tooplate.com/view/2085-neuron
                               <span><a href="#"><img src="{{article.author_pic.url}}" class="img-responsive img-circle">{{article.author}}</a></span>
                               <span><i class="fa fa-date"></i>{{article.created}}</span>
                               <span><a href="#"><i class="fa fa-comment-o"></i> 35 Comments</a></span>
+                              <span><a href="#"><i></i>{{article.categories}}</a></span>
                          </div>
                          <div class="blog-post-des">
                               <p>{{article.content|truncatechars:300|safe}}</p>
