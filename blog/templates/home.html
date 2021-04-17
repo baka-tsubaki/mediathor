@@ -103,16 +103,14 @@ http://www.tooplate.com/view/2085-neuron
                               <span><a href="#"><img src="{{article.author_pic.url}}" class="img-responsive img-circle">{{article.author}}</a></span>
                               <span><i class="fa fa-date"></i>{{article.created}}</span>
                               <span><a href="#"><i class="fa fa-comment-o"></i> 35 Comments</a></span>
-                              {% comment %} <span><a href="#"><i></i>{{article.categories}}</a></span> {% endcomment %}
+                              <span><a href="#"><i></i>{{article.categories}}</a></span>
                          </div>
                          <div class="blog-post-des">
                               <p>{{article.content|truncatechars:300|safe}}</p>
                               <a href="{% url 'post' article.slug %}" class="btn btn-default">Lire La Suite</a>
                          </div>
                     </div>
-                    {% endfor %}
-
-                    
+                    {% endfor %}         
           </div>
      </div>
 </section>

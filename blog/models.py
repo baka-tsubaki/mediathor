@@ -52,10 +52,8 @@ class Article(models.Model):
             url = ''
         return url
 
-
-    def __str__(self):
-        return self.title
-
+    class Meta:
+        ordering = ('title', 'author')
 
 class Comment(models.Model):
     name = models.CharField(max_length=200)
